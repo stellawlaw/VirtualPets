@@ -28,10 +28,10 @@ public class VirtualPetTest {
         int result = underTest.getThirst();
         assertEquals(10, result);
     }
-//    @Test
-//    public void shouldHaveDefaultHunger() {
-//        VirtualPet underTest = new VirtualPet("Steve");
-//        int result = underTest.getHunger();
-//        assertEquals(10, result);
-//    }
+    @Test
+    public void shouldHaveDefaultBoredom() {
+        VirtualPet underTest = new VirtualPet("Tom");
+        int result = underTest.getBoredom();
+        assertEquals(10, result);
+    }
 }

@@ -14,4 +14,8 @@ public class VirtualPet {
     public int getThirst() {
         return 10;
     }
+
+    public int getBoredom() {
+        return 10;
+    }
 }
