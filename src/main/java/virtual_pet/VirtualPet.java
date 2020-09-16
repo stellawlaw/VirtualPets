@@ -10,4 +10,8 @@ public class VirtualPet {
     public int getHunger() {
         return 10;
     }
+
+    public int getThirst() {
+        return 10;
+    }
 }

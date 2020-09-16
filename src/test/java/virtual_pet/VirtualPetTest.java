@@ -21,5 +21,17 @@ public class VirtualPetTest {
         VirtualPet underTest = new VirtualPet("Steve");
         int result = underTest.getHunger();
         assertEquals(10, result);
-  }
+    }
+    @Test
+    public void shouldHaveDefaultThirst() {
+        VirtualPet underTest = new VirtualPet("Bob");
+        int result = underTest.getThirst();
+        assertEquals(10, result);
+    }
+//    @Test
+//    public void shouldHaveDefaultHunger() {
+//        VirtualPet underTest = new VirtualPet("Steve");
+//        int result = underTest.getHunger();
+//        assertEquals(10, result);
+//    }
 }
