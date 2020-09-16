@@ -34,4 +34,8 @@ public class VirtualPetTest {
         int result = underTest.getBoredom();
         assertEquals(10, result);
     }
+    @Test
+    public void shouldCreateVirtualPet(){
+        VirtualPet underTest = new VirtualPet("Tom");
+    }
 }
