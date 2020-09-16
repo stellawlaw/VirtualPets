@@ -6,7 +6,8 @@ public class VirtualPet {
     public String getName() {
         return "Jeff";
     }
-//    public int getHunger =10;
 
-
+    public int getHunger() {
+        return 10;
+    }
 }

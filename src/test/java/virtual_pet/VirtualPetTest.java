@@ -16,10 +16,10 @@ public class VirtualPetTest {
         String result = underTest.getName();
         assertEquals("Jeff", result);
     }
-//    @Test
-//    public void shouldHaveDefaultHunger() {
-//        VirtualPet underTest = new VirtualPet("Steve");
-//        int result = underTest.getHunger;
-//        assertEquals(10, result);
-//  }
+    @Test
+    public void shouldHaveDefaultHunger() {
+        VirtualPet underTest = new VirtualPet("Steve");
+        int result = underTest.getHunger();
+        assertEquals(10, result);
+  }
 }
