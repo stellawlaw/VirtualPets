@@ -34,15 +34,15 @@ public class VirtualPetTest {
         int result = underTest.getBoredom();
         assertEquals(10, result);
     }
-//    @Test
-//    public void shouldTick() {
-//        VirtualPet pet = new VirtualPet("Kendrick");
-//
-//        int initialHunger = pet.getHunger();
-//        pet.tick();
-//        int hungerAfterTick = pet.getHunger();
-//
-//        assertEquals(initialHunger + 10, hungerAfterTick);
-//    }
+    @Test
+    public void shouldTick() {
+        VirtualPet pet = new VirtualPet("Kendrick", 10, 10, 10);
+
+        int initialHunger = pet.getHunger();
+        pet.tick();
+        int hungerAfterTick = pet.getHunger();
+
+        assertEquals(initialHunger + 10, hungerAfterTick);
+    }
 
 }
