@@ -64,6 +64,7 @@ public class VirtualPet {
     public void dead() {
         if (hunger >= 100 || thirst >= 100 || boredom >= 100) {
             deceased = true;
+            System.out.println("Sorry, your pet has died!");
         } else {
             deceased = false;
         }
