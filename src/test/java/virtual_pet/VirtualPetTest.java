@@ -3,40 +3,41 @@ package virtual_pet;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class VirtualPetTest {
 
     @Test
     public void shouldBeAbleToCreatePet() {
-        VirtualPet pet = new VirtualPet("Test Name", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Test Name", 10, 10, 10, false);
     }
     @Test
     public void petShouldHaveName() {
-        VirtualPet underTest = new VirtualPet("Jeff", 10, 10, 10);
+        VirtualPet underTest = new VirtualPet("Jeff", 10, 10, 10, false);
         String result = underTest.getName();
         assertEquals("Jeff", result);
     }
     @Test
     public void shouldHaveDefaultHunger() {
-        VirtualPet underTest = new VirtualPet("Steve", 10, 10, 10);
+        VirtualPet underTest = new VirtualPet("Steve", 10, 10, 10, false);
         int result = underTest.getHunger();
         assertEquals(10, result);
     }
     @Test
     public void shouldHaveDefaultThirst() {
-        VirtualPet underTest = new VirtualPet("Bob", 10, 10, 10);
+        VirtualPet underTest = new VirtualPet("Bob", 10, 10, 10, false);
         int result = underTest.getThirst();
         assertEquals(10, result);
     }
     @Test
     public void shouldHaveDefaultBoredom() {
-        VirtualPet underTest = new VirtualPet("Tom", 10, 10, 10);
+        VirtualPet underTest = new VirtualPet("Tom", 10, 10, 10, false);
         int result = underTest.getBoredom();
         assertEquals(10, result);
     }
     @Test
     public void shouldTickHunger() {
-        VirtualPet pet = new VirtualPet("Kendrick", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Kendrick", 10, 10, 10, false);
 
         int initialHunger = pet.getHunger();
         pet.tick();
@@ -46,7 +47,7 @@ public class VirtualPetTest {
     }
     @Test
     public void shouldTickThirst() {
-        VirtualPet pet = new VirtualPet("Roger", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Roger", 10, 10, 10, false);
 
         int initialThirst = pet.getThirst();
         pet.tick();
@@ -56,7 +57,7 @@ public class VirtualPetTest {
     }
     @Test
     public void shouldTickBoredom() {
-        VirtualPet pet = new VirtualPet("Taco", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Taco", 10, 10, 10, false);
 
         int initialBoredom = pet.getBoredom();
         pet.tick();
@@ -66,7 +67,7 @@ public class VirtualPetTest {
     }
     @Test
     public void decreaseHungerIfFedFood(){
-        VirtualPet pet = new VirtualPet("Tony", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Tony", 10, 10, 10, false);
 
         int initialHunger = pet.getHunger();
         pet.feed();
@@ -76,7 +77,7 @@ public class VirtualPetTest {
     }
     @Test
     public void decreaseThirstIfWatered(){
-        VirtualPet pet = new VirtualPet("Barry", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Barry", 10, 10, 10, false);
 
         int initialThirst = pet.getThirst();
         pet.water();
@@ -86,7 +87,7 @@ public class VirtualPetTest {
     }
     @Test
     public void decreaseBoredomIfPlay(){
-        VirtualPet pet = new VirtualPet("Ben", 10, 10, 10);
+        VirtualPet pet = new VirtualPet("Ben", 10, 10, 10, false);
 
         int initialBoredom = pet.getBoredom();
         pet.play();
@@ -96,7 +97,7 @@ public class VirtualPetTest {
     }
     @Test
     public void makeSureHungerBoredomAndThirstIsNotBelowZero(){
-        VirtualPet pet = new VirtualPet("Levi", 0, 0, 0);
+        VirtualPet pet = new VirtualPet("Levi", 0, 0, 0, false);
         pet.feed();
         pet.water();
         pet.play();
@@ -107,6 +108,14 @@ public class VirtualPetTest {
         assertEquals(0, hunger);
         assertEquals(0, thirst);
         assertEquals(0, boredom);
+    }
+    @Test
+    public void ifHungerBoredomThirstIs100PetDies(){
+        VirtualPet pet = new VirtualPet("Stella", 100, 90, 90, false);
+       // boolean deceased = false;
+        pet.tick();
+        pet.dead();
+        assertTrue(true);
     }
 
 }

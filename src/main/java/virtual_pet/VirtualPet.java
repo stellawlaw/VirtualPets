@@ -6,8 +6,9 @@ public class VirtualPet {
     private int hunger = 10;
     private int thirst = 10;
     private int boredom = 10;
+    private boolean deceased = false;
 
-    public VirtualPet(String name, int hunger, int thirst, int boredom) {
+    public VirtualPet(String name, int hunger, int thirst, int boredom, boolean deceased) {
         this.name = name;
         this.hunger = hunger;
         this.thirst = thirst;
@@ -45,18 +46,26 @@ public class VirtualPet {
     }
 
     public void water() {
-        if (thirst >= 5){
-            thirst = thirst -5;
+        if (thirst >= 5) {
+            thirst = thirst - 5;
         } else {
             System.out.println("I am hydrated!");
         }
     }
 
     public void play() {
-        if (boredom >= 5){
-            boredom = boredom -5;
+        if (boredom >= 5) {
+            boredom = boredom - 5;
         } else {
             System.out.println("I am content");
+        }
+    }
+
+    public void dead() {
+        if (hunger >= 100 || thirst >= 100 || boredom >= 100) {
+            deceased = true;
+        } else {
+            deceased = false;
         }
     }
 }
