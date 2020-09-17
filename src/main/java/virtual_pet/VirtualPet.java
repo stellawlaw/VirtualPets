@@ -35,4 +35,8 @@ public class VirtualPet {
         thirst = thirst + 10;
         boredom = boredom + 10;
     }
+
+    public void feed() {
+        hunger = hunger -5;
+    }
 }
