@@ -74,5 +74,15 @@ public class VirtualPetTest {
 
         assertEquals (initialHunger -5, hungerAfterFed);
     }
+    @Test
+    public void decreaseThirstIfWatered(){
+        VirtualPet pet = new VirtualPet("Barry", 10, 10, 10);
+
+        int initialThirst = pet.getThirst();
+        pet.water();
+        int thirstAfterWater = pet.getThirst();
+
+        assertEquals (initialThirst -5, thirstAfterWater);
+    }
 
 }

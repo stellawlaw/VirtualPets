@@ -39,4 +39,8 @@ public class VirtualPet {
     public void feed() {
         hunger = hunger -5;
     }
+
+    public void water() {
+        thirst = thirst -5;
+    }
 }
