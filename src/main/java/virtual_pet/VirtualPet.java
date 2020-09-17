@@ -2,9 +2,7 @@ package virtual_pet;
 
 public class VirtualPet {
 
-  //  private int hunger = 10;
-   // private int hungerAfterTick;
-    private String name;
+    private String name = "Jeff";
     private int hunger = 10;
     private int thirst =10;
     private int boredom =10;
@@ -33,4 +31,3 @@ public class VirtualPet {
 //
 
     }
-}

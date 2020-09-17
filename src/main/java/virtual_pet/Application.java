@@ -8,9 +8,9 @@ public class Application {
 
         System.out.println("What is your pet's name?");
         String name = input.nextLine();
-        VirtualPet pet = new VirtualPet(name);
+        VirtualPet pet = new VirtualPet(name, 10, 10, 10);
 
-        System.out.println("Your pet's name is " + pet.getName());
+        System.out.println("Your pet's name is " + name);
     }
 
 
