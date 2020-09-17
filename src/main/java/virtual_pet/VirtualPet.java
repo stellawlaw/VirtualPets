@@ -1,21 +1,36 @@
 package virtual_pet;
 
 public class VirtualPet {
-    private String name;
 
-    public VirtualPet(String name) {
+  //  private int hunger = 10;
+   // private int hungerAfterTick;
+    private String name;
+    private int hunger = 10;
+    private int thirst =10;
+    private int boredom =10;
+
+    public VirtualPet(String name, int hunger, int thirst, int boredom) {
         this.name = name;
+        this.hunger = hunger;
+        this.thirst = thirst;
+        this.boredom = boredom;
     }
     public String getName() {
         return name;
     }
     public int getHunger() {
-        return 10;
+        return hunger;
     }
     public int getThirst() {
-        return 10;
+        return thirst;
     }
     public int getBoredom() {
-        return 10;
+        return boredom;
+    }
+
+//    public void tick() {
+//        getHunger() = getHunger() +10;
+//
+
     }
 }
