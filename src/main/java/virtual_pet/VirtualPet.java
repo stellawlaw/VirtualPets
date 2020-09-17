@@ -6,13 +6,16 @@ public class VirtualPet {
     private int hunger = 10;
     private int thirst = 10;
     private int boredom = 10;
+    private String astrologicalSign = "Aries";
     private boolean deceased = false;
 
-    public VirtualPet(String name, int hunger, int thirst, int boredom, boolean deceased) {
+    public VirtualPet(String name, int hunger, int thirst, int boredom, String astrologicalSign, boolean deceased) {
         this.name = name;
         this.hunger = hunger;
         this.thirst = thirst;
         this.boredom = boredom;
+        this.astrologicalSign = astrologicalSign;
+        this.deceased = deceased;
     }
 
     public String getName() {
@@ -29,6 +32,10 @@ public class VirtualPet {
 
     public int getBoredom() {
         return boredom;
+    }
+
+    public String getSign() {
+        return astrologicalSign;
     }
 
     public void tick() {
