@@ -84,5 +84,15 @@ public class VirtualPetTest {
 
         assertEquals (initialThirst -5, thirstAfterWater);
     }
+    @Test
+    public void decreaseBoredomIfPlay(){
+        VirtualPet pet = new VirtualPet("Ben", 10, 10, 10);
+
+        int initialBoredom = pet.getBoredom();
+        pet.play();
+        int boredomAfterPlay = pet.getBoredom();
+
+        assertEquals (initialBoredom -5, boredomAfterPlay);
+    }
 
 }
