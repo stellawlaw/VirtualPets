@@ -37,14 +37,26 @@ public class VirtualPet {
     }
 
     public void feed() {
-        hunger = hunger -5;
+        if (hunger >= 5) {
+            hunger = hunger - 5;
+        } else {
+            System.out.println("I am full!");
+        }
     }
 
     public void water() {
-        thirst = thirst -5;
+        if (thirst >= 5){
+            thirst = thirst -5;
+        } else {
+            System.out.println("I am hydrated!");
+        }
     }
 
     public void play() {
-        boredom = boredom -5;
+        if (boredom >= 5){
+            boredom = boredom -5;
+        } else {
+            System.out.println("I am content");
+        }
     }
 }

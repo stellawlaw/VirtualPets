@@ -94,5 +94,19 @@ public class VirtualPetTest {
 
         assertEquals (initialBoredom -5, boredomAfterPlay);
     }
+    @Test
+    public void makeSureHungerBoredomAndThirstIsNotBelowZero(){
+        VirtualPet pet = new VirtualPet("Levi", 0, 0, 0);
+        pet.feed();
+        pet.water();
+        pet.play();
+        int hunger = pet.getHunger();
+        int thirst = pet.getThirst();
+        int boredom = pet.getBoredom();
+
+        assertEquals(0, hunger);
+        assertEquals(0, thirst);
+        assertEquals(0, boredom);
+    }
 
 }
