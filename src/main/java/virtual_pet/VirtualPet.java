@@ -2,38 +2,33 @@ package virtual_pet;
 
 public class VirtualPet {
 
-    private String name = "Jeff";
+    private String name; // = "Jeff";
     private int hunger = 10;
     private int thirst = 10;
     private int boredom = 10;
     private String astrologicalSign = "Aries";
     private boolean deceased = false;
 
-    public VirtualPet(String name, int hunger, int thirst, int boredom, String astrologicalSign, boolean deceased) {
+    public VirtualPet(String name, int hunger, int thirst, int boredom, String astrologicalSign) {
         this.name = name;
         this.hunger = hunger;
         this.thirst = thirst;
         this.boredom = boredom;
         this.astrologicalSign = astrologicalSign;
-        this.deceased = deceased;
     }
 
     public String getName() {
         return name;
     }
-
     public int getHunger() {
         return hunger;
     }
-
     public int getThirst() {
         return thirst;
     }
-
     public int getBoredom() {
         return boredom;
     }
-
     public String getSign() {
         return astrologicalSign;
     }
@@ -45,27 +40,21 @@ public class VirtualPet {
     }
 
     public void feed() {
-        if (hunger >= 5) {
-            hunger = hunger - 5;
-        } else {
-            System.out.println("I am full!");
-        }
-    }
+       hunger = hunger-5;
+       if(hunger<=0){
+           hunger =0;}
+       }
 
     public void water() {
-        if (thirst >= 5) {
-            thirst = thirst - 5;
-        } else {
-            System.out.println("I am hydrated!");
-        }
+        thirst = thirst-5;
+        if(thirst<=0){
+            thirst =0;}
     }
 
     public void play() {
-        if (boredom >= 5) {
-            boredom = boredom - 5;
-        } else {
-            System.out.println("I am content");
-        }
+        boredom = boredom-5;
+        if(boredom<=0){
+            boredom =0;}
     }
 
     public void dead() {

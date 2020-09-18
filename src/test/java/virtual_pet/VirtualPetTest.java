@@ -9,35 +9,41 @@ public class VirtualPetTest {
 
     @Test
     public void shouldBeAbleToCreatePet() {
-        VirtualPet pet = new VirtualPet("Test Name", 10, 10, 10,"Aries", false);
+        VirtualPet pet = new VirtualPet("Test Name", 10, 10, 10,"Aries");
     }
     @Test
     public void petShouldHaveName() {
-        VirtualPet underTest = new VirtualPet("Jeff", 10, 10, 10, "Aries", false);
+        VirtualPet underTest = new VirtualPet("Jeff", 10, 10, 10, "Taurus");
         String result = underTest.getName();
         assertEquals("Jeff", result);
     }
     @Test
+    public void petShouldHaveAnotherName() {
+        VirtualPet underTest = new VirtualPet("Pat", 10, 10, 10, "Taurus");
+        String result = underTest.getName();
+        assertEquals("Pat", result);
+    }
+    @Test
     public void shouldHaveDefaultHunger() {
-        VirtualPet underTest = new VirtualPet("Steve", 10, 10, 10, "Aries", false);
+        VirtualPet underTest = new VirtualPet("Steve", 10, 10, 10, "Gemini");
         int result = underTest.getHunger();
         assertEquals(10, result);
     }
     @Test
     public void shouldHaveDefaultThirst() {
-        VirtualPet underTest = new VirtualPet("Bob", 10, 10, 10, "Aries", false);
+        VirtualPet underTest = new VirtualPet("Bob", 10, 10, 10, "Cancer");
         int result = underTest.getThirst();
         assertEquals(10, result);
     }
     @Test
     public void shouldHaveDefaultBoredom() {
-        VirtualPet underTest = new VirtualPet("Tom", 10, 10, 10,"Aries", false);
+        VirtualPet underTest = new VirtualPet("Tom", 10, 10, 10,"Leo");
         int result = underTest.getBoredom();
         assertEquals(10, result);
     }
     @Test
     public void shouldTickHunger() {
-        VirtualPet pet = new VirtualPet("Kendrick", 10, 10, 10,"Aries", false);
+        VirtualPet pet = new VirtualPet("Kendrick", 10, 10, 10,"Virgo");
 
         int initialHunger = pet.getHunger();
         pet.tick();
@@ -47,7 +53,7 @@ public class VirtualPetTest {
     }
     @Test
     public void shouldTickThirst() {
-        VirtualPet pet = new VirtualPet("Roger", 10, 10, 10, "Aries", false);
+        VirtualPet pet = new VirtualPet("Roger", 10, 10, 10, "Libra");
 
         int initialThirst = pet.getThirst();
         pet.tick();
@@ -57,7 +63,7 @@ public class VirtualPetTest {
     }
     @Test
     public void shouldTickBoredom() {
-        VirtualPet pet = new VirtualPet("Taco", 10, 10, 10, "Aries", false);
+        VirtualPet pet = new VirtualPet("Taco", 10, 10, 10, "Scorpio");
 
         int initialBoredom = pet.getBoredom();
         pet.tick();
@@ -67,7 +73,7 @@ public class VirtualPetTest {
     }
     @Test
     public void decreaseHungerIfFedFood(){
-        VirtualPet pet = new VirtualPet("Tony", 10, 10, 10,"Aries", false);
+        VirtualPet pet = new VirtualPet("Tony", 10, 10, 10,"Sagittarius");
 
         int initialHunger = pet.getHunger();
         pet.feed();
@@ -77,7 +83,7 @@ public class VirtualPetTest {
     }
     @Test
     public void decreaseThirstIfWatered(){
-        VirtualPet pet = new VirtualPet("Barry", 10, 10, 10,"Aries", false);
+        VirtualPet pet = new VirtualPet("Barry", 10, 10, 10,"Capricorn");
 
         int initialThirst = pet.getThirst();
         pet.water();
@@ -87,7 +93,7 @@ public class VirtualPetTest {
     }
     @Test
     public void decreaseBoredomIfPlay(){
-        VirtualPet pet = new VirtualPet("Ben", 10, 10, 10, "Aries", false);
+        VirtualPet pet = new VirtualPet("Ben", 10, 10, 10, "Aquarius");
 
         int initialBoredom = pet.getBoredom();
         pet.play();
@@ -97,7 +103,7 @@ public class VirtualPetTest {
     }
     @Test
     public void makeSureHungerBoredomAndThirstIsNotBelowZero(){
-        VirtualPet pet = new VirtualPet("Levi", 0, 0, 0, "Aries", false);
+        VirtualPet pet = new VirtualPet("Levi", 0, 0, 0, "Pisces");
         pet.feed();
         pet.water();
         pet.play();
@@ -111,7 +117,7 @@ public class VirtualPetTest {
     }
     @Test
     public void ifHungerBoredomThirstIs100PetDies(){
-        VirtualPet pet = new VirtualPet("Stella", 100, 90, 90, "Aries", false);
+        VirtualPet pet = new VirtualPet("Stella", 100, 90, 90, "Aries");
        // boolean deceased = false;
         pet.tick();
         pet.dead();
@@ -119,7 +125,7 @@ public class VirtualPetTest {
     }
     @Test
     public void shouldHaveDefaultAstrologicalSign(){
-        VirtualPet underTest = new VirtualPet("Lauren", 50, 50, 50, "Aries", false);
+        VirtualPet underTest = new VirtualPet("Lauren", 50, 50, 50, "Aries");
         String result = underTest.getSign();
         assertEquals("Aries", result);
     }
