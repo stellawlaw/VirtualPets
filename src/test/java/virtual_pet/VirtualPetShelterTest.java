@@ -15,10 +15,8 @@ public class VirtualPetShelterTest {
     @Test
     public void petShouldBeAbleToIntakeManyPets() {
        ArrayList<String> pets = new ArrayList<String>();
-       pets.set(0,"Jeff");
-
+       pets.add("Jeff");
        String result= pets.get(0);
-
        assertEquals("Jeff", result);
 
 
