@@ -22,12 +22,24 @@ public class VirtualPetShelterTest {
         assertEquals("Pat", result);
     }
 
-//    @Test
-//    public void petShouldBeAbleToIntakeManyPets() {
-//        ArrayList<String> pets = new ArrayList<String>();
-//        pets.add("Jeff");
-//        String result = pets.get(0);
-//        assertEquals("Jeff", result);
-//
-//    }
+    @Test
+    public void petShouldBeAbleToIntakeManyPets() {
+        ArrayList<String> pets = new ArrayList<String>();
+        VirtualPet pet1 = new VirtualPet("Jeff", 10, 10, 10, "Aries");
+        VirtualPet pet2 = new VirtualPet("Stella", 10, 10, 10, "Leo");
+        pets.add(pet1.getName());
+        pets.add("" + pet1.getHunger());
+        pets.add("" + pet1.getThirst());
+        pets.add("" + pet1.getBoredom());
+        pets.add(pet1.getSign());
+        pets.add(pet2.getName());
+        pets.add("" + pet2.getHunger());
+        pets.add("" + pet2.getThirst());
+        pets.add("" + pet2.getBoredom());
+        pets.add(pet2.getSign());
+        String result = pets.get(0);
+        String result1 = pets.get(5);
+        assertEquals("Jeff", result);
+        assertEquals("Stella", result1);
+    }
 }
