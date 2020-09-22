@@ -1,5 +1,7 @@
 package virtual_pet;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Application {
@@ -7,6 +9,8 @@ public class Application {
         Scanner input= new Scanner(System.in);
         VirtualPet pet1 = new VirtualPet("Jeff", 10, 10, 10, "Aries");
         VirtualPet pet2 = new VirtualPet("Stella", 10, 10, 10, "Leo");
+
+
 
 //        System.out.println("What is your pet's name?");
 //        String name = input.nextLine();
