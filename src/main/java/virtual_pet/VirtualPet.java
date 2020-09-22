@@ -65,4 +65,9 @@ public class VirtualPet {
             deceased = false;
         }
     }
-}
+        @Override
+        public String toString() {
+            return name + hunger;
+        }
+    }
+
