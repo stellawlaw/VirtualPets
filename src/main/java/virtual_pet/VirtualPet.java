@@ -34,25 +34,25 @@ public class VirtualPet {
     }
 
     public void tick() {
-        hunger = hunger + 10;
-        thirst = thirst + 10;
-        boredom = boredom + 10;
+        hunger = hunger + 5;
+        thirst = thirst + 5;
+        boredom = boredom + 5;
     }
 
     public void feed() {
-       hunger = hunger-5;
+       hunger = hunger-10;
        if(hunger<=0){
            hunger =0;}
        }
 
     public void water() {
-        thirst = thirst-5;
+        thirst = thirst-10;
         if(thirst<=0){
             thirst =0;}
     }
 
     public void play() {
-        boredom = boredom-5;
+        boredom = boredom-10;
         if(boredom<=0){
             boredom =0;}
     }
@@ -72,7 +72,7 @@ public class VirtualPet {
 
         @Override
         public String toString() {
-            return name + " " + hunger + " " + thirst + " " + boredom + " " + astrologicalSign;
+            return name + " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
         }
     }
 

@@ -27,6 +27,7 @@ public class Application {
 
 
         while (!userInputIntro.equalsIgnoreCase("quit")) {
+            System.out.println("\n");
             System.out.println("Enter 1 to feed the pets");
             System.out.println("Enter 2 to water the pets");
             System.out.println("Enter 3 to play with pets");
@@ -58,7 +59,7 @@ public class Application {
             }
             if (userInput.equalsIgnoreCase("5")) {
                 for (VirtualPet petToDisplay : shelter.retrievePets()) {
-                    System.out.println(petToDisplay.status());
+                    System.out.println(petToDisplay.toString());
                 }
             }
             if (userInput.equalsIgnoreCase("6")) {
