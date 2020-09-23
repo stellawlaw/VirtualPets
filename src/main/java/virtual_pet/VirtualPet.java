@@ -72,7 +72,7 @@ public class VirtualPet {
 
         @Override
         public String toString() {
-            return name + " " + hunger + " " + thirst + " " + boredom;
+            return name + " " + hunger + " " + thirst + " " + boredom + " " + astrologicalSign;
         }
     }
 

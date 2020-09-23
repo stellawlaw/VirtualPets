@@ -7,30 +7,33 @@ import java.util.Scanner;
 
 public class Application {
     public static void main(String[] args) {
-
-        System.out.println("Greeting");
-        System.out.println("Instructions");
-        System.out.println("User Input");
-
         Scanner inputScanner = new Scanner(System.in);
-
         VirtualPetShelter shelter = new VirtualPetShelter();
         VirtualPet Jeff = new VirtualPet("Jeff", 10, 10, 10, "Aries");
         VirtualPet Stella = new VirtualPet("Stella", 10, 10, 10, "Leo");
         shelter.addPet(Jeff);
         shelter.addPet(Stella);
 
+        System.out.println("Hello, welcome to your virtual pet shelter!");
+        System.out.println("Follow the prompts to create or interact with your pets.");
+        System.out.println("What's your pets name?");
+        String userInputIntro = inputScanner.nextLine();
+        VirtualPet newPet = new VirtualPet(userInputIntro, 10, 10, 10, "Sagittarius");
+        shelter.addPet(newPet);
+
         for (VirtualPet petToDisplay : shelter.retrievePets()) {
             System.out.println(petToDisplay.status());
         }
-        System.out.println("Enter 1 to feed the pets");
-        System.out.println("Enter 2 to water the pets");
-        System.out.println("Enter 3 to play with pets");
-        System.out.println("Enter 4 to remove a pet");
-        System.out.println("Enter 5 for pets status");
-        String userInput = inputScanner.nextLine();
 
-        while (!userInput.equalsIgnoreCase("quit")) {
+
+        while (!userInputIntro.equalsIgnoreCase("quit")) {
+            System.out.println("Enter 1 to feed the pets");
+            System.out.println("Enter 2 to water the pets");
+            System.out.println("Enter 3 to play with pets");
+            System.out.println("Enter 4 to remove a pet");
+            System.out.println("Enter 5 for pets status");
+            System.out.println("Enter 6 to add a pet");
+            String userInput = inputScanner.nextLine();
             if (userInput.equalsIgnoreCase("1")) {
                 shelter.feedAllPets();
                 shelter.tickAllPets();
@@ -56,11 +59,17 @@ public class Application {
             if (userInput.equalsIgnoreCase("5")) {
                 for (VirtualPet petToDisplay : shelter.retrievePets()) {
                     System.out.println(petToDisplay.status());
-                } break;
+                }
+            }
+            if (userInput.equalsIgnoreCase("6")) {
+                System.out.println("What's your pets name?6");
+                String anotherPet = inputScanner.nextLine();
+                VirtualPet anotherNewPet = new VirtualPet(anotherPet, 10, 10, 10, "Sagittarius");
+                shelter.addPet(anotherNewPet);
             }
             for (VirtualPet petToDisplay : shelter.retrievePets()) {
                 System.out.println(petToDisplay);
-            } break;
+            }
             //Trying to print out the hunger of a single pet.
             //Through an override in VirtualPet.
             //Referencing the Workshop.
