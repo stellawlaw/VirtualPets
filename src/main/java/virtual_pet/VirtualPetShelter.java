@@ -48,9 +48,12 @@ public class VirtualPetShelter {
     }
 
 
-    public void feedPet(String petNameToFeed) {
-        for (VirtualPet petToFeed : petList.values()){
-            petToFeed.feed();
+    public void feedPet(VirtualPet petNameToFeed) {
+//       VirtualPet petNameToFeed;
+       petList.values();
+       petNameToFeed.feed();
+
         }
+
     }
-}
+

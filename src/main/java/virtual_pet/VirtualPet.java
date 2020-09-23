@@ -3,7 +3,7 @@ package virtual_pet;
 public class VirtualPet {
 
     private String name; // = "Jeff";
-    private int hunger = 10;
+    private static int hunger = 10;
     private int thirst = 10;
     private int boredom = 10;
     private String astrologicalSign = "Aries";
@@ -39,7 +39,7 @@ public class VirtualPet {
         boredom = boredom + 10;
     }
 
-    public void feed() {
+    public static void feed() {
        hunger = hunger-5;
        if(hunger<=0){
            hunger =0;}
@@ -67,7 +67,7 @@ public class VirtualPet {
     }
         @Override
         public String toString() {
-            return name + hunger;
+            return name + " " + hunger + " " + thirst + " " + boredom;
         }
     }
 
