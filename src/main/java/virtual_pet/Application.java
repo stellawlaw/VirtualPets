@@ -18,7 +18,7 @@ public class Application {
         System.out.println("Follow the prompts to create or interact with your pets.");
         System.out.println("What's your pets name?");
         String userInputIntro = inputScanner.nextLine();
-        VirtualPet newPet = new VirtualPet(userInputIntro, 10, 10, 10, "Sagittarius");
+        VirtualPet newPet = new VirtualPet(userInputIntro, 10, 10, 10, "Aries");
         shelter.addPet(newPet);
 
         for (VirtualPet petToDisplay : shelter.retrievePets()) {
@@ -63,24 +63,14 @@ public class Application {
                 }
             }
             if (userInput.equalsIgnoreCase("6")) {
-                System.out.println("What's your pets name?6");
+                System.out.println("What's your pets name?");
                 String anotherPet = inputScanner.nextLine();
                 VirtualPet anotherNewPet = new VirtualPet(anotherPet, 10, 10, 10, "Sagittarius");
                 shelter.addPet(anotherNewPet);
             }
             for (VirtualPet petToDisplay : shelter.retrievePets()) {
-                System.out.println(petToDisplay);
+                System.out.println(petToDisplay);       //Sending table twice due to this and displays in input cases.
             }
-            //Trying to print out the hunger of a single pet.
-            //Through an override in VirtualPet.
-            //Referencing the Workshop.
-
-
-//        System.out.println("What is your pet's name?");
-//        String name = input.nextLine();
-//        VirtualPet pet = new VirtualPet(name, 10, 10, 10, "Aries");
-//
-//        System.out.println("Your pet's name is " + name);
         }
     }
 }
