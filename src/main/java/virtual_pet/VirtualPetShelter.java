@@ -47,13 +47,5 @@ public class VirtualPetShelter {
         return petList.get(petName);
     }
 
-
-    public void feedPet(VirtualPet petNameToFeed) {
-//       VirtualPet petNameToFeed;
-       petList.values();
-       petNameToFeed.feed();
-
-        }
-
     }
 
