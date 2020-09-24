@@ -63,14 +63,54 @@ public class Application {
                 }
             }
             if (userInput.equalsIgnoreCase("6")) {
-                System.out.println("What's your pets name?");
+                System.out.println("What's type of pet would you like to create?");
+                System.out.println("Type 1 for an organic pet");
+                System.out.println("Type 2 for a robotic pet");
                 String anotherPet = inputScanner.nextLine();
-                VirtualPet anotherNewPet = new VirtualPet(anotherPet, 10, 10, 10, "Sagittarius");
-                shelter.addPet(anotherNewPet);
+                if (anotherPet.equalsIgnoreCase("1")) {
+                    System.out.println("What kind of organic pet?");
+                    System.out.println("Type 1 for Dog");
+                    System.out.println("Type 2 for Cat");
+                    String catOrDog = inputScanner.nextLine();
+                    if (catOrDog.equalsIgnoreCase("1")) {
+                        System.out.println("What would you like to name your organic dog?");
+                        String newOrganicDog = inputScanner.nextLine();
+                        VirtualPet organicDog = new OrganicDog(newOrganicDog, 10, 10, 10, "Aries");
+                        shelter.addPet(organicDog);
+                    } else {
+                        System.out.println("What would you like to name your organic cat?");
+                        String newOrganicCat = inputScanner.nextLine();
+                        VirtualPet organicCat = new OrganicCat(newOrganicCat, 10, 10, 10, "Aries");
+                        shelter.addPet(organicCat);
+                    }
+                }
+                if (anotherPet.equalsIgnoreCase("2")) {
+                    System.out.println("What kind of robotic pet?");
+                    System.out.println("Type 1 for Dog");
+                    System.out.println("Type 2 for Cat");
+                    String roboticCatOrDog = inputScanner.nextLine();
+
+                    if (roboticCatOrDog.equalsIgnoreCase("1")) {
+                        System.out.println("What would you like to name your robotic dog?");
+                        String newRoboticDog = inputScanner.nextLine();
+                        VirtualPet roboticDog = new RoboticDog(newRoboticDog, 10, 10, 10, "Aries");
+                        shelter.addPet(roboticDog);
+                    } else {
+                        System.out.println("What would you like to name your robotic cat?");
+                        String newRoboticCat = inputScanner.nextLine();
+                        VirtualPet roboticCat = new RoboticCat(newRoboticCat, 10, 10, 10, "Aries");
+                        shelter.addPet(roboticCat);
+                    }
+                }
             }
+
+
             for (VirtualPet petToDisplay : shelter.retrievePets()) {
                 System.out.println(petToDisplay);       //Sending table twice due to this and displays in input cases.
             }
         }
     }
 }
+
+
+

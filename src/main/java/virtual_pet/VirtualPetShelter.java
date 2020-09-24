@@ -27,6 +27,7 @@ public class VirtualPetShelter {
         }
     }
 
+
     public void playAllPets() {
         for (VirtualPet petToPlay : petList.values()) {
             petToPlay.play();
