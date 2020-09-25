@@ -19,10 +19,6 @@ public class Application {
         OrganicCat starterCat = new OrganicCat(userInputIntro, 10, 10, 10, "Aries");
         shelter.addOrganicCat(starterCat);
 
-        for (String petToDisplay : shelter.retrieveIds()) {
-            System.out.println(petToDisplay);
-        }
-
         for (VirtualPet petToDisplay : shelter.retrievePets()) {
             System.out.println(petToDisplay.status());
         }
@@ -63,11 +59,11 @@ public class Application {
                 shelter.removePet(petToRemove);
                 shelter.tickAllPets();
             }
-            if (userInput.equalsIgnoreCase("5")) {
-                for (VirtualPet petToDisplay : shelter.retrievePets()) {
-                    System.out.println(petToDisplay.toString());
-                }
-            }
+//            if (userInput.equalsIgnoreCase("5")) {
+//                for (VirtualPet petToDisplay : shelter.retrievePets()) {
+//                    System.out.println(petToDisplay.status());
+//                }
+//            }
             if (userInput.equalsIgnoreCase("6")) {
                 System.out.println("What's type of pet would you like to create?");
                 System.out.println("Type 1 for an organic pet");
@@ -110,13 +106,9 @@ public class Application {
                 }
             }
 
-            for (String petToDisplay : shelter.retrieveIds()) {
-                System.out.println(petToDisplay);
-            }
-
 
             for (VirtualPet petToDisplay : shelter.retrievePets()) {
-                System.out.println(petToDisplay);       //Sending table twice due to this and displays in input cases.
+                System.out.println(petToDisplay.status());       //Sending table twice due to this and displays in input cases.
             }
         }
     }

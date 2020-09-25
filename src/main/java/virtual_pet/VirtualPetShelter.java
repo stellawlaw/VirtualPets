@@ -6,7 +6,7 @@ import java.util.*;
 
 public class VirtualPetShelter {
 
-    private Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
+    private static Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
     //need to put pet type in key instaed of name
 
     public void addRoboticCat(RoboticCat petToAdd) {
@@ -64,7 +64,7 @@ public class VirtualPetShelter {
     }
 
 
-    public Set<String> retrieveIds() {
+    public static Set<String> retrieveIds() {
         return petList.keySet();
     }
 

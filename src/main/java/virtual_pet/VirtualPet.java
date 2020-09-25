@@ -103,7 +103,7 @@ public class VirtualPet {
         }
 
         public String status () {
-            return name + " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
+            return VirtualPetShelter.retrieveIds() + " | Name: " + name  +  " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
         }
 
         @Override
