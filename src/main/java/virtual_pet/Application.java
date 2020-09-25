@@ -33,14 +33,16 @@ public class Application {
             System.out.println("Enter 5 for pets status");
             System.out.println("Enter 6 to add a pet");
             String userInput = inputScanner.nextLine();
-//            if (userInput.equalsIgnoreCase("1")) {
-//                shelter.feedAllPets();
-//                shelter.tickAllPets();
-//            }
+
             if (userInput.equalsIgnoreCase("1")) {
-                shelter.oilRoboticPets();
+                System.out.println(); //trying to print out status of litterbox and cage
+                shelter.feedAllPets();
                 shelter.tickAllPets();
             }
+//            if (userInput.equalsIgnoreCase("1")) {
+//                shelter.oilRoboticPets();
+//                shelter.tickAllPets();
+//            }
             if (userInput.equalsIgnoreCase("2")) {
                 shelter.waterAllPets();
                 shelter.tickAllPets();

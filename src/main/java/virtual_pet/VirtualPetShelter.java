@@ -6,6 +6,22 @@ import java.util.*;
 
 public class VirtualPetShelter {
 
+    private int catLitterbox = 10;
+    private int dogCage = 10;
+
+//    public VirtualPetShelter (int catLitterbox, int dogCage){
+//        this.catLitterbox = catLitterbox;
+//        this.dogCage = dogCage;
+//    }
+
+    public int getCatLitterbox() {
+        return catLitterbox;
+    }
+
+    public int getDogCage() {
+        return dogCage;
+    }
+
     private static Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
     //need to put pet type in key instaed of name
 
@@ -29,11 +45,24 @@ public class VirtualPetShelter {
         petList.remove(petName);
     }
 
+
     public void feedAllPets() {
+        int i = 1;
         for (VirtualPet petToFeed : petList.values()) {
             petToFeed.feed();
+            i++;
         }
+        dogCage = dogCage + i * 10;
+        catLitterbox = catLitterbox + i *10;
     }
+
+    public void cleanLitterbox(){
+        catLitterbox = 0;
+    }
+    public void cleanDogCages(){
+        dogCage = 0;
+    }
+
     public void oilRoboticPets() {
         for (VirtualPet petToFeed : petList.values()) {
             petToFeed.feed();
