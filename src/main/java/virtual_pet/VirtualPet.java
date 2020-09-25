@@ -9,6 +9,8 @@ public class VirtualPet {
     private int randomNumber = (int) (Math.random() * 11);
     private String astrologicalSign = signGenerator();
     private boolean deceased = false;
+    private Object RoboticCat;
+    private Object RoboticDog;
 
     public VirtualPet(String name, int hunger, int thirst, int boredom, String astrologicalSign) {
         this.name = name;
@@ -103,9 +105,11 @@ public class VirtualPet {
         }
 
         public String status () {
-            return VirtualPetShelter.retrieveIds() + " | Name: " + name  +  " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
+//            if (VirtualPetShelter.retrieveIds().equals(RoboticCat) || VirtualPetShelter.retrieveIds().equals(RoboticDog)) {
+//                return VirtualPetShelter.retrieveIds() + " | Name: " + name + " | Maintenance: " + hunger + " | Oil Level: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
+//            }
+            return VirtualPetShelter.retrieveIds() + " | Name: " + name + " | Hunger/Maintenance: " + hunger + " | Thirst/Oil: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
         }
-
         @Override
         public String toString () {
             return name + " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
