@@ -1,6 +1,7 @@
 package virtual_pet;
 
 import javax.imageio.plugins.jpeg.JPEGQTable;
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -9,17 +10,18 @@ public class Application {
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
         VirtualPetShelter shelter = new VirtualPetShelter();
-        VirtualPet Jeff = new VirtualPet("Jeff", 10, 10, 10, "Aries");
-        VirtualPet Stella = new VirtualPet("Stella", 10, 10, 10, "Leo");
-        shelter.addPet(Jeff);
-        shelter.addPet(Stella);
 // Need to fix intro as well as Quit.
+        System.out.println();
         System.out.println("Hello, welcome to your virtual pet shelter!");
         System.out.println("Follow the prompts to create or interact with your pets.");
-        System.out.println("What's your pets name?");
+        System.out.println("Your first pet will be an organic cat, what would you like to name it?");
         String userInputIntro = inputScanner.nextLine();
-        VirtualPet newPet = new VirtualPet(userInputIntro, 10, 10, 10, "Aries");
-        shelter.addPet(newPet);
+        OrganicCat starterCat = new OrganicCat(userInputIntro, 10, 10, 10, "Aries");
+        shelter.addOrganicCat(starterCat);
+
+        for (String petToDisplay : shelter.retrieveIds()) {
+            System.out.println(petToDisplay);
+        }
 
         for (VirtualPet petToDisplay : shelter.retrievePets()) {
             System.out.println(petToDisplay.status());
@@ -79,13 +81,13 @@ public class Application {
                     if (catOrDog.equalsIgnoreCase("1")) {
                         System.out.println("What would you like to name your organic dog?");
                         String newOrganicDog = inputScanner.nextLine();
-                        VirtualPet organicDog = new OrganicDog(newOrganicDog, 10, 10, 10, "Aries");
-                        shelter.addPet(organicDog);
+                        OrganicDog organicDog = new OrganicDog(newOrganicDog, 10, 10, 10, "Aries");
+                        shelter.addOrganicDog(organicDog);
                     } else {
                         System.out.println("What would you like to name your organic cat?");
                         String newOrganicCat = inputScanner.nextLine();
-                        VirtualPet organicCat = new OrganicCat(newOrganicCat, 10, 10, 10, "Aries");
-                        shelter.addPet(organicCat);
+                        OrganicCat organicCat = new OrganicCat(newOrganicCat, 10, 10, 10, "Aries");
+                        shelter.addOrganicCat(organicCat);
                     }
                 }
                 if (anotherPet.equalsIgnoreCase("2")) {
@@ -97,15 +99,19 @@ public class Application {
                     if (roboticCatOrDog.equalsIgnoreCase("1")) {
                         System.out.println("What would you like to name your robotic dog?");
                         String newRoboticDog = inputScanner.nextLine();
-                        VirtualPet roboticDog = new RoboticDog(newRoboticDog, 10, 10, 10, "Aries");
-                        shelter.addPet(roboticDog);
+                        RoboticDog roboticDog = new RoboticDog(newRoboticDog, 10, 10, 10, "Aries");
+                        shelter.addRoboticDog(roboticDog);
                     } else {
                         System.out.println("What would you like to name your robotic cat?");
                         String newRoboticCat = inputScanner.nextLine();
-                        VirtualPet roboticCat = new RoboticCat(newRoboticCat, 10, 10, 10, "Aries");
-                        shelter.addPet(roboticCat);
+                        RoboticCat roboticCat = new RoboticCat(newRoboticCat, 10, 10, 10, "Aries");
+                        shelter.addRoboticCat(roboticCat);
                     }
                 }
+            }
+
+            for (String petToDisplay : shelter.retrieveIds()) {
+                System.out.println(petToDisplay);
             }
 
 

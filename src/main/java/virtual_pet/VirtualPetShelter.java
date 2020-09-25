@@ -1,6 +1,7 @@
 package virtual_pet;
 
 import java.lang.reflect.Array;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class VirtualPetShelter {
@@ -8,8 +9,20 @@ public class VirtualPetShelter {
     private Map<String, VirtualPet> petList = new HashMap<String, VirtualPet>();
     //need to put pet type in key instaed of name
 
-    public void addPet(VirtualPet petToAdd) {
-        petList.put(petToAdd.getName(), petToAdd);
+    public void addRoboticCat(RoboticCat petToAdd) {
+        petList.put("Robotic Cat", petToAdd);
+    }
+
+    public void addRoboticDog(RoboticDog petToAdd) {
+        petList.put("Robotic Dog", petToAdd);
+    }
+
+    public void addOrganicCat(OrganicCat petToAdd) {
+        petList.put("Organic Cat", petToAdd);
+    }
+
+    public void addOrganicDog(OrganicDog petToAdd) {
+        petList.put("Organic Dog", petToAdd);
     }
 
     public void removePet(String petName) {
@@ -48,6 +61,11 @@ public class VirtualPetShelter {
 
     public Collection<VirtualPet> retrievePets() {
         return petList.values();
+    }
+
+
+    public Set<String> retrieveIds() {
+        return petList.keySet();
     }
 
     public VirtualPet retrievePet(String petName) {
