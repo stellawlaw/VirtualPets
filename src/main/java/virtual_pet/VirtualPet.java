@@ -5,7 +5,7 @@ public class VirtualPet {
     private String name; // = "Jeff";
     private int hunger = 10;
     private int thirst = 10;
-    private int boredom = 10;
+    public int boredom = 10;
     private int randomNumber = (int) (Math.random() * 11);
     private String astrologicalSign = signGenerator();
     private boolean deceased = false;

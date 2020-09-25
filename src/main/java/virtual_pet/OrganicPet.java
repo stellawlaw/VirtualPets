@@ -5,7 +5,7 @@ public class OrganicPet extends VirtualPet {
         super(name, hunger, thirst, boredom, astrologicalSign);
     }
 
-    public void cleanPet(){
-
+    public void clean(){
     }
+
 }

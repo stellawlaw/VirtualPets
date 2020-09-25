@@ -13,7 +13,7 @@ public class Application {
         VirtualPet Stella = new VirtualPet("Stella", 10, 10, 10, "Leo");
         shelter.addPet(Jeff);
         shelter.addPet(Stella);
-
+// Need to fix intro as well as Quit.
         System.out.println("Hello, welcome to your virtual pet shelter!");
         System.out.println("Follow the prompts to create or interact with your pets.");
         System.out.println("What's your pets name?");
@@ -35,8 +35,12 @@ public class Application {
             System.out.println("Enter 5 for pets status");
             System.out.println("Enter 6 to add a pet");
             String userInput = inputScanner.nextLine();
+//            if (userInput.equalsIgnoreCase("1")) {
+//                shelter.feedAllPets();
+//                shelter.tickAllPets();
+//            }
             if (userInput.equalsIgnoreCase("1")) {
-                shelter.feedAllPets();
+                shelter.oilRoboticPets();
                 shelter.tickAllPets();
             }
             if (userInput.equalsIgnoreCase("2")) {
