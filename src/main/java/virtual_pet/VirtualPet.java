@@ -105,9 +105,9 @@ public class VirtualPet {
         }
 
         public String status () {
-//            if (VirtualPetShelter.retrieveIds().equals(RoboticCat) || VirtualPetShelter.retrieveIds().equals(RoboticDog)) {
-//                return VirtualPetShelter.retrieveIds() + " | Name: " + name + " | Maintenance: " + hunger + " | Oil Level: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
-//            }
+            if (VirtualPetShelter.retrieveIds().equals(RoboticCat) || VirtualPetShelter.retrieveIds().equals(RoboticDog)) {
+                return VirtualPetShelter.retrieveIds() + " | Name: " + name + " | Maintenance: " + hunger + " | Oil Level: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
+            }
             return VirtualPetShelter.retrieveIds() + " | Name: " + name + " | Hunger/Maintenance: " + hunger + " | Thirst/Oil: " + thirst + " | Boredom: " + boredom + " | Sign: " + astrologicalSign;
         }
         @Override
